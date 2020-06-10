@@ -1,0 +1,18 @@
+---
+# tasks file for role1
+
+- name: Copy ANTI-SPAM SSH Config File
+  template:
+     src: "/root/ansibleBoilerPlate/roles/role2/templates/ANTI-SPAM-sshd_config.j2"
+     dest: "/tmp/ANTI-SPAM-sshd_config"
+     owner: root
+     group: root
+     mode: '0600'
+     backup: yes
+
+
+#- name: Echo Role 2
+#  shell: "echo 'From role2'"
+#  register: role2out
+
+#- debug: var=role2out

@@ -1,0 +1,14 @@
+---
+# tasks file for sampleRole
+
+- name: Import Role1
+  import_role:
+   name: role1
+  when: (inventory_hostname == '192.168.50.60')
+  #when: ansible_facts['ansible_default_ipv4'] == '192.168.50.60'
+
+- name: Import Roles2
+  import_role:
+   name: role2
+  when: (inventory_hostname == '192.168.50.70')
+  #when: ansible_facts['ansible_default_ipv4'] == '192.168.50.70'

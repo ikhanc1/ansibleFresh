@@ -1,0 +1,36 @@
+#192.168.50.60
+
+#[MySelf]
+#localhost
+#192.168.50.60 ansible_port=34000 ansible_user=ikhan ansible_ssh_private_key_file=/root/ikhan_Private.pem
+
+[CentOS]
+192.168.50.60
+192.168.50.70
+#192.168.50.70 ansible_port=34000 ansible_user=ikhan ansible_ssh_private_key_file=/root/ikhan_Private.pem
+
+
+[CentOS7]
+192.168.50.70
+#192.168.50.70 ansible_port=34000 ansible_user=ikhan ansible_ssh_private_key_file=/root/ikhan_Private.pem
+
+#[CentOS6]
+#192.168.50.75
+
+#[Ubuntu]
+#192.168.50.80
+
+[everyone:children]
+#MySelf
+CentOS7
+CentOS
+#CentOS6
+#Ubuntu
+
+[everyone:vars]
+ansible_port=34000
+ansible_user=ikhan
+ansible_ssh_private_key_file=/root/ikhan_Private.pem
+#ansible_ssh_private_key_file=/root/Playbooks/ansible-vault/ikhan_Private.pem
+ansible_python_interpreter="/usr/bin/env python"
+

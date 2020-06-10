@@ -1,0 +1,18 @@
+---
+# tasks file for role1
+
+- name: Copy EMAIL SSH Config File
+  template:
+     src: "/root/ansibleBoilerPlate/roles/role1/templates/EMAIL-sshd_config.j2"
+     dest: "/tmp/EMAIL-sshd_config"
+     owner: root
+     group: root
+     mode: '0600'
+     backup: yes
+
+
+#- name: Echo Role 1
+#  shell: "echo 'From role1'"
+#  register: role1out
+
+#- debug: var=role1out
